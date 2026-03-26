@@ -1,0 +1,31 @@
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Двухкадровая анимация</h1>
+  <img id="animation-image" src="Pictures/поп кет закр.jpg" alt="Кадр 1">
+  <script>
+    const images = [
+      'Pictures/поп кет закр.jpg',
+      'Pictures/поп кет откр.jpg'
+    ];
+
+    let currentImageIndex = 0; 
+    const animationSpeed = 100
+; 
+    function changeImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      document.getElementById('animation-image').src = images[currentImageIndex];
+    }
+
+    setInterval(changeImage, animationSpeed);
+  </script>
+</body>
+</html>
